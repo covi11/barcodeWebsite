@@ -1,0 +1,258 @@
+*{
+  margin: 0%;
+  padding: 0%;
+}
+.hero{
+    display:flex;
+    justify-content: center;
+} 
+
+.hero-text{
+  position: relative;
+  display: inline-block;
+  margin-top: 5%;
+}
+.hero-text1{
+
+font-family: 'Futura-Bold',sans-serif;
+font-style: normal;
+font-weight: bolder;
+font-size: 100px;
+line-height: 115px;
+text-transform: uppercase;
+background: linear-gradient(90deg, rgba(0, 82, 204, 0.64) 0%, rgba(50, 255, 100, 0.64) 50%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+position: absolute;
+    left: 7px;
+    z-index: -1;
+}
+
+
+.hero-text2{
+font-family: 'Futura-Bold', sans-serif;
+font-style: normal;
+font-weight: bolder;
+font-size: 100px;
+line-height: 115px;
+text-transform: uppercase;
+position: relative;
+color: #171717;
+
+}
+
+.intro-text{
+
+font-family: 'Futura PT', sans-serif;
+font-style: normal;
+margin: 5rem auto 5rem auto ;
+font-weight: 500;
+font-size: 32px;
+line-height: 51px;
+text-align: center;
+color: #171717;
+
+}
+.tech-section {
+    position: relative;
+    max-width: 1179px;
+    width: 90%; 
+    height:auto;
+    margin: 0 auto; 
+    padding: 20px 10px 40px 10px; 
+    background: rgba(23, 23, 23, 0.7);
+    border-radius: 15px;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .tech-head {
+    font-family: 'Futura PT', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 82px;
+    text-transform: capitalize;
+    color: #32FF64;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .tech-text {
+    font-family: 'Futura PT', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 41px;
+    text-align: center;
+    color: #ececec;
+    max-width: 1062px;
+    margin: 0 auto;
+  }
+  
+  .limit-head{
+    font-family: 'Futura-Bold', sans-serif;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 60px;
+    margin: 30px;
+    line-height: 115px;
+    text-align: center;    
+    color: #171717;
+    }
+    .limit-imgs{
+      text-align: center;
+    
+    }
+    .limit-img1{
+      width: auto;
+      height: 250px;
+      margin: auto 10%;
+    }
+    .limit-img2{
+      
+      width: auto;
+      height: 250px;
+      margin: auto 10%;
+    }
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: rgba(23, 23, 23, 0.7);
+      padding: 20px;
+      width: 100%;
+      height: auto;
+      border-radius: 15px 15px 0px 0px;
+    }
+    
+    .footer-img{
+      width: auto;
+      height: 80px;
+    } 
+    .email-collector {
+      background: #171717;
+      color: #ececec;
+      height: auto;
+      padding: 20px;
+      font-family: 'Futura-Bold', sans-serif;
+      border-radius: 10px;
+      width: auto;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+    
+    .email-collector input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      color: #171717;
+      border: none;
+
+    }
+    
+    .email-collector button {
+      width: 87%;
+      background: #00ff99;
+      color: #171717;
+      font-weight: bolder;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    
+    .email-collector button:hover {
+      background: #ececec;
+      color: #171717;
+    }
+
+    .socials-text{
+      color: #ececec;
+      font-family: 'Futura-Bold', sans-serif;
+      font-size: larger;
+      font-weight: bolder;
+      border-radius: 10px;
+      text-align: center;
+      justify-content: center;
+    }
+  .social-icons a img {
+      width: auto;
+      height: 35px;
+      transition: transform 0.3s ease-in-out;
+      margin: 10% 5%;
+  }
+
+  .social-icons a:hover img {
+      transform: scale(1.2);
+  }
+  
+  @media (max-width: 768px) {
+    .hero-text1, .hero-text2 {
+      font-size: 50px;
+      line-height: 60px;
+    }
+ 
+  
+    .fs-5 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  
+    .tech-head {
+      font-size: 40px;
+      line-height: 50px;
+    }
+  
+    .tech-text {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  
+    .limit-head {
+      font-size: 40px;
+      line-height: 50px;
+    }
+  
+    .limit-img1, .limit-img2 {
+      width: 80%;
+      height: auto;
+    }
+  footer{
+    justify-content: center;
+
+  }
+    .footer-img {
+      height: 60px;
+    }
+  
+      footer {
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: auto;
+      }
+    
+    
+    .email-collector{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; 
+      width: 100%;
+      max-width: 310px; 
+      height: auto; 
+      margin: 10px 0px;
+    }
+    
+    .social-icons {
+      gap: 10px;
+    }
+  }
+  
