@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, push, set } from 'firebase/database';
+import { getDatabase, ref, push, set, get, child } from 'firebase/database';
 
-// ✅ Firebase Configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAUvsKu2qaEM9ueiLpuHPhIvceRhx9DjMs",
   authDomain: "dripeaters.firebaseapp.com",
@@ -13,7 +12,6 @@ const firebaseConfig = {
   appId: "1:848739321457:web:bc1df95b26eb3cba747dd0"
 };
 
-// ✅ Initialize Firebase App
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
@@ -23,17 +21,29 @@ const database = getDatabase(app);
 export class FirebaseService {
   constructor() {}
 
-  /**
-   * ✅ Validate Email Format
-   */
+
   private isValidEmail(email: string): boolean {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
 
-  /**
-   * ✅ Save Email to Firebase Realtime Database
-   */
+
+  private async emailExists(email: string): Promise<boolean> {
+    const dbRef = ref(database, "emails");
+    
+    try {
+      const snapshot = await get(dbRef);
+      if (snapshot.exists()) {
+        const emails = snapshot.val();
+        return Object.values(emails).some((entry: any) => entry.email === email);
+      }
+    } catch (error) {
+      console.error("❌ Error checking email existence:", error);
+    }
+    return false;
+  }
+
+
   async saveEmail(email: string): Promise<void> {
     const trimmedEmail = email.trim();
 
@@ -44,6 +54,11 @@ export class FirebaseService {
 
     if (!this.isValidEmail(trimmedEmail)) {
       alert("❌ Invalid email format! Please enter a valid email.");
+      return;
+    }
+
+    if (await this.emailExists(trimmedEmail)) {
+      alert("❌ This email is already subscribed.");
       return;
     }
 
