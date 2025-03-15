@@ -16,6 +16,10 @@
               "outputPath": "dist/barcode-website",
               "index": "src/index.html",
               "browser": "src/main.ts",
+              "allowedCommonJsDependencies": [
+              "faye-websocket",
+              "@firebase/database"
+              ],
               "polyfills": [
                 "zone.js"
               ],
