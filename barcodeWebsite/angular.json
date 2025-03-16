@@ -11,6 +11,10 @@
         "prefix": "app",
         "architect": {
           "build": {
+            "angularCompilerOptions": {
+  "disableSelectorCheck": true
+},
+
             "builder": "@angular-devkit/build-angular:application",
             "options": {
               "outputPath": "dist/barcode-website",
